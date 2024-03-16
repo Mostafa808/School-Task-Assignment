@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>
+            School Task Assignment
+        </title>
+        <link rel="icon" type="image/x-icon" href="Images/Icons/School.png">
+    </head>
+    <body style="background-color:#cccccc;">
+        <header style="text-align:center; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+            <div>
+                <h1>
+                    School Management
+                </h1>
+            </div>
+        </header>
+        <hr>
+        <nav id="NavBar" style="display:flex;">
+            <ul style="display: flex; list-style-type: none; text-align: center; font-size:18px; flex:1; height:auto;">
+                
+                <li style="display: inline;flex:1">
+                    <a href="Home.html"> Home </a>
+                </li>
+                <li style="display: inline;flex:1">
+                    <a href="Tasks.html">Tasks</a>
+                </li>
+                <li style="display: inline;flex:1">
+                    <a href="Meetings.html">Meetings</a>
+                </li>
+                <li style="display: inline;flex:1">
+                    <a href="Profile.html">Profile</a>
+                </li>
+                <li style="display: inline;flex:1">
+                    <a href="About.html">About</a>
+                </li>
+                <li style="display: inline;flex:1">
+                    <form style="display: flex; flex-direction: row;">
+                        <input type="text" id= "SearchField" placeholder="Principal Profile" style="flex:3;">
+                        <div style="flex:2; display: flex;flex-direction: column;">
+                            <select id="SearchType" name="SearchType" title="Search Type" style="flex:2; text-align: center;">
+                                <option value="Profile" selected>Profile</option>
+                                <option value="Tasks">Tasks</option>
+                                <option value="Meeting">Meeting</option>
+                            </select>
+                           
+                            <button type="button" title="Search" id= "Search" style="flex:1; background-color: beige; font-size:13px;">
+                                <label for="Search"><img width="13" height="13" src="Images/Icons/Search.png" alt="Search Icon"/>Search</label>
+                            </button>
+                        </div>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+        <hr>
+        <main style="display:flex; margin: 20px 20px;">
+            <article style="display:flex; flex-direction:column; flex:4; border:2px solid #111111; border-right-width: 1px; padding: 10px 10px 10px 10px;">
+                <div style="display:flex; flex-direction:column; flex:1;">
+                    <!-- Place Your Code Here! for only content pages like about and display task.-->
+                    <h4>You May sign-up or sign-in to show the profile</h4>
+                </div>
+            </article>
+            <!-- Place Your Code Here! for all content types like task handler, forms of login and sign-up and so.
+                 Be careful with adding divs.
+            -->
+        </main>
+        <footer>
+            <hr>
+            <div style="margin:20px 20px;">
+                <h4>Contact Us:</h4>
+                <p id="Contacts">
+                    <i>20, Cairo Uneversity ST, Giza</i><br>
+                    Tel:<b>+201114435107</b><br>
+                    <h4><b>Mail The School:</b></h4>
+                        <ul>
+                            <li><a href="mailto:mohamedwali9091@gmail.com">School Principal</a></li>
+                            <li><a href="mailto:jonathanmokhles@gmail.com">Enrollment Office</a></li>
+                            <li><a href="mailto:lokliehchuol@gmail.com">HR Department</a></li>
+                        </ul>
+                </p>
+                <ul>
+                    <li><a href="Credits.html">Credits</a></li>
+                    <li><a href="License.html">License</a></li>
+                    <li><a href="#NavBar">Back to the Top of the Page.</a></li>
+                    
+                </ul>
+            </div>
+        </footer>
+    </body>
+</html>
