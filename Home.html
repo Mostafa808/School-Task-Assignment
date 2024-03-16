@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>
+            School Task Assignment
+        </title>
+        <link rel="icon" type="image/x-icon" href="Images/Icons/School.png">
+    </head>
+    <body style="background-color:#cccccc;">
+        <header style="text-align:center; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+            <div>
+                <h1>
+                    School Management
+                </h1>
+            </div>
+        </header>
+        <hr>
+        <nav id="NavBar" style="display:flex;">
+            <ul style="display: flex; list-style-type: none; text-align: center; font-size:18px; flex:1; height:auto;">
+                
+                <li style="display: inline;flex:1">
+                    <a href="Home.html"> Home </a>
+                </li>
+                <li style="display: inline;flex:1">
+                    <a href="Tasks.html">Tasks</a>
+                </li>
+                <li style="display: inline;flex:1">
+                    <a href="Meetings.html">Meetings</a>
+                </li>
+                <li style="display: inline;flex:1">
+                    <a href="Profile.html">Profile</a>
+                </li>
+                <li style="display: inline;flex:1">
+                    <a href="About.html">About</a>
+                </li>
+                <li style="display: inline;flex:1">
+                    <form style="display: flex; flex-direction: row;">
+                        <input type="text" id= "SearchField" placeholder="Principal Profile" style="flex:3;">
+                        <div style="flex:2; display: flex;flex-direction: column;">
+                            <select id="SearchType" name="SearchType" title="Search Type" style="flex:2; text-align: center;">
+                                <option value="Profile" selected>Profile</option>
+                                <option value="Tasks">Tasks</option>
+                                <option value="Meeting">Meeting</option>
+                            </select>
+                           
+                            <button type="button" title="Search" id= "Search" style="flex:1; background-color: beige; font-size:13px;">
+                                <img width="13" height="13" src="Images/Icons/Search.png" alt="Search Icon"/>Search
+                            </button>
+                        </div>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+        <hr>
+        <main style="display:flex; margin: 20px 20px;">
+            <article style="display:flex; flex-direction:column; flex:4; border:2px solid #111111; border-right-width: 1px; padding: 10px 10px 10px 10px;">
+                <div style="display:flex; flex-direction:column; flex:1;">
+                    <h3>Welcome, Visitors.</h3>
+                    <p>
+                        This is the task management website of the school. You can <br>
+                        <h4>For Teachers:</h4>
+                        You can sign-up your profile and activate it to start recieving tasks.
+                        Ensure that the email is valid and type a strong password because of data security.
+                        If you have any problem is your account try to contact the <a href="#Contacts">Principal</a> to schedule a session with the IT.
+                        Please, try to turn-in the work in time and track all your tasks.<br>
+                        <h4>For Visitors:</h4>
+                        if you are seeking this website to enroll in the school, you should follow these steps:-
+                        <ol>
+                            <li>
+                                You must pass these requirements:
+                                <ul>
+                                    <li>Your nationality is egyptian.</li>
+                                    <li>Your first degree relatives' nationalities are egyptians.</li>
+                                    <li>You have at least GPA 3.</li>
+                                    <li>Your age do not exceed 18.</li>
+                                </ul>
+                            </li>
+                            <li>Prepare your file with 18 personal pictures.</li>
+                            <li>Send your information to the <a href="#Contacts">School Enrollment Office</a> via email.</li>
+                            <li>The enrollment office will send you the link of the acceptance test. You must get 80% or higher to pass.</li>
+                            <li>Enrollment Office will finish the rest of enrollment process digitally.</li>
+                            <li>Wait the response and check your email daily.</li>
+                        </ol>
+                        If you are willing to work in this school, you should follow these steps:-
+                        <ol>
+                            <li>
+                                You must pass these requirements:
+                                <ul>
+                                    <li>You must have a bachelor's degree whith GPA 3.2 or higher.</li>
+                                    <li>You must own a grand master degree in any field of science.</li>
+                                    <li>You should pass the international test of strength.</li>
+                                    <li>You must be able to stay awake for 30 hours.</li>
+                                </ul>
+                            </li>
+                            <li>Prepare your file with 9 personal pictures and a recommendation.</li>
+                            <li>Send these information to the <a href="#Contacts">School HR Department</a> via email.</li>
+                            <li>The HR Department will then send you back a form to apply other information.</li>
+                            <li>Wait and monitor your email to ckeck the response and results.</li>
+                        </ol>
+
+                    </p>
+                    <!-- Place Your Code Here! for only content pages like about and display task.-->
+                </div>
+            </article>
+            <aside style="display:flex; flex:1; border:2px solid #111111; border-left-width: 1px; padding: 10px 10px 10px 10px;">
+                <div style="flex:1">
+                    <h2 style="text-align:center;"> Announcements </h2>
+                    <ul>
+                        <li>There will be a night shift today. Prepare your tents.</li>
+                        <li>The tasks have been updated, recently.</li>
+                        <li>There was a data leak do not forget to change your websites.</li>
+                        <li>The summer competitions is open.</li>
+                        <li>You can now manage meetings.</li>
+                        <li>This is the first launch of the website.</li>
+                    </ul>
+                </div>
+            </aside>
+            <!-- Place Your Code Here! for all content types like task handler, forms of login and sign-up and so.
+                 Be careful with adding divs.
+            -->
+        </main>
+        <footer>
+            <hr>
+            <div style="margin:20px 20px;">
+                <h4>Contact Us:</h4>
+                <p id="Contacts">
+                    <i>20, Cairo Uneversity ST, Giza</i><br>
+                    Tel:<b>+201114435107</b><br>
+                    <h4><b>Mail The School:</b></h4>
+                        <ul>
+                            <li><a href="mailto:mohamedwali9091@gmail.com">School Principal</a></li>
+                            <li><a href="mailto:jonathanmokhles@gmail.com">Enrollment Office</a></li>
+                            <li><a href="mailto:lokliehchuol@gmail.com">HR Department</a></li>
+                        </ul>
+                </p>
+                <ul>
+                    <li><a href="Credits.html">Credits</a></li>
+                    <li><a href="License.html">License</a></li>
+                    <li><a href="#NavBar">Back to the Top of the Page.</a></li>
+                    
+                </ul>
+            </div>
+        </footer>
+    </body>
+</html>
