@@ -56,28 +56,47 @@
         <hr>
         <main style="display:flex; margin: 20px 20px;">
             <article style="display:flex; flex-direction:column; flex:4; border:2px solid #111111; border-right-width: 1px; padding: 10px 10px 10px 10px;">
-                <div style="display:flex; flex-direction:column; flex:1;">
-                    <!-- Place Your Code Here! for only content pages like about and display task.-->
-                    <h4>Manage or view your tasks and other' tasks.</h4>
-                    <a href="CreateNewTask.html"> Create New Task</a>
+                <h2 style="margin-left : 2em">
+                    Create New Task
+                </h2>
+                <div style="display:flex; flex-direction:column; flex:1; text-align: center;">
+                    <form>
+                        <div>
+                            <div>
+                                <lapel> Task Title</lapel>
+                                <input type="text" required name="title">
+                            </div>
+                            <br/>
+                            <div>
+                                <lapel> Teacher username</lapel>
+                                <input type="text" required name="teacher name">
+                            </div>
+                            <br/>
+                            <div>
+                                <label>priority</label><br/>
+                                <input type="radio" id="low" name="priority" value="low">
+                                <label for="low">low</label><br/>
+                                <input type="radio" id="medium" name="priority" value="medium">
+                                <label for="medium">medium</label><br/>
+                                <input type="radio" id="high" name="priority" value="high">
+                                <label for="high">high</label>
+                            </div>
+                            <br/>
+                            <div>
+                                <label for="deadline">deadline (date and time):</label>
+                                <input type="datetime-local" id="deadline" name="deadline">
+                            </div>
+                            <br/>
+                            <lapel> Description</lapel><br/>
+                            <textarea name="Describe" id="" cols="50" rows="15" title="Place the Description Here"></textarea>
+                            <br/>
+                            <div>
+                                <input type="submit">
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </article>
-            <aside style="display:flex; flex:1; border:2px solid #111111; border-left-width: 1px; padding: 10px 10px 10px 10px;">
-                <div style="flex:1">
-                    <h2 style="text-align:center;"> Announcements </h2>
-                    <ul>
-                        <li>There will be a night shift today. Prepare your tents.</li>
-                        <li>The tasks have been updated, recently.</li>
-                        <li>There was a data leak do not forget to change your websites.</li>
-                        <li>The summer competitions is open.</li>
-                        <li>You can now manage meetings.</li>
-                        <li>This is the first launch of the website.</li>
-                    </ul>
-                </div>
-            </aside>
-            <!-- Place Your Code Here! for all content types like task handler, forms of login and sign-up and so.
-                 Be careful with adding divs.
-            -->
         </main>
         <footer>
             <hr>
