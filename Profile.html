@@ -58,7 +58,26 @@
             <article style="display:flex; flex-direction:column; flex:4; border:2px solid #111111; border-right-width: 1px; padding: 10px 10px 10px 10px;">
                 <div style="display:flex; flex-direction:column; flex:1;">
                     <!-- Place Your Code Here! for only content pages like about and display task.-->
-                    <h4>You May sign-up or sign-in to show the profile</h4>
+                    <h1>profile settings</h1>
+                    <form>
+                        <label for ="username">Name</label>
+                        <input type="text" id="username" name="username" required>
+                        <br>
+                        <label for ="emal">Email</label>
+                        <input type="email" id="email" name="Email" required>
+                        <br>
+                        <label for ="age">Age</label>
+                        <input type="number" id="age" name="age" required>
+                        <br>
+                        <label for ="city">City</label>
+                        <input type="text" id="city" name="city" required>
+                        <br>
+                        <label for ="profile-image">Profile Image"</label>
+                        <input type="file" id="profile" name="profile-image" accept="imge/*">
+                        <input type="submit" value="save">
+                        <input type="button" value="cancel">
+                        
+                    </form>
                 </div>
             </article>
             <!-- Place Your Code Here! for all content types like task handler, forms of login and sign-up and so.
