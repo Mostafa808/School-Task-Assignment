@@ -6,7 +6,7 @@
         <title>
             School Task Assignment
         </title>
-        <link rel="icon" type="image/x-icon" href="Images/Icons/School.png">
+        <link rel="icon" type="image/x-icon" href="../../Images/Icons/School.png">
     </head>
     <body style="background-color:#cccccc;">
         <header style="text-align:center; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
@@ -21,19 +21,19 @@
             <ul style="display: flex; list-style-type: none; text-align: center; font-size:18px; flex:1; height:auto;">
                 
                 <li style="display: inline;flex:1">
-                    <a href="Home.html"> Home </a>
+                    <a href="../../Home.html"> Home </a>
                 </li>
                 <li style="display: inline;flex:1">
-                    <a href="Tasks.html">Tasks</a>
+                    <a href="../../Tasks.html">Tasks</a>
                 </li>
                 <li style="display: inline;flex:1">
-                    <a href="Meetings.html">Meetings</a>
+                    <a href="../../Meetings.html">Meetings</a>
                 </li>
                 <li style="display: inline;flex:1">
-                    <a href="Profile.html">Profile</a>
+                    <a href="../../Profile.html">Profile</a>
                 </li>
                 <li style="display: inline;flex:1">
-                    <a href="About.html">About</a>
+                    <a href="../../About.html">About</a>
                 </li>
                 <li style="display: inline;flex:1">
                     <form style="display: flex; flex-direction: row;">
@@ -46,7 +46,7 @@
                             </select>
                            
                             <button type="button" title="Search" id= "Search" style="flex:1; background-color: beige; font-size:13px;">
-                                <label for="Search"><img width="13" height="13" src="Images/Icons/Search.png" alt="Search Icon"/>Search</label>
+                                <label for="Search"><img width="13" height="13" src="../../Images/Icons/Search.png" alt="Search Icon"/>Search</label>
                             </button>
                         </div>
                     </form>
@@ -56,65 +56,34 @@
         <hr/>
         <main style="display:flex; margin: 20px 20px;">
             <article style="display:flex; flex-direction:column; flex:4; border:2px solid #111111; border-right-width: 1px; padding: 10px 10px 10px 10px;">
-                <div style="display:flex; flex-direction:column; flex:1; text-align:center;">
+                <div style="display:flex; flex-direction:column; flex:1;">
                     <!-- Place Your Code Here! for only content pages like about and display task.-->
-                    <h1>Profile Settings</h1>
                     <form style="display:flex; flex-direction: column; align-items: center;">
-                        <table cellpadding="2">
+                        <table cellpadding="5" style="text-align:center;">
+                        
                             <tbody>
                                 <tr>
-                                    <td><label for ="username">Name: </label></td>
-                                    <td><input type="text" id="username" name="username" autocomplete="username" required></td>
+                                    <td colspan="2"> <h2>Login to Your Account</h2></td>
                                 </tr>
                                 <tr>
-                                    <td><label for ="email">Email: </label></td>
-                                    <td><input type="email" id="email" name="Email" autocomplete="email" required></td>
+                                    <td>Username:</td>
+                                    <td><input type="text" id="username" title="Type your unique username" autocomplete="username" name="username" required></td>
                                 </tr>
                                 <tr>
-                                    <td><label for ="age">Age: </label></td>
-                                    <td><input type="number" id="age" name="age" accept="number" required></td>
+                                    <td>Password:</td>
+                                    <td><input type="password" id="password" title="Type your Password" autocomplete="current-password" name="password" required></td>
                                 </tr>
                                 <tr>
-                                    <td><label for ="city">City: </label></td>
-                                    <td><input type="text" id="city" name="city" required></td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2"><hr/></td>
-                                </tr>
-                                <tr>
-                                    <td><label for ="profile">Profile Image: </label></td>
-                                    <td><input type="file" id="profile" name="profile-image" accept="imge/*"></td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2"><hr/></td>
-                                </tr>
-                                <tr>
-                                    <td><input type="submit" value="save"></td>
-                                    <td><input type="button" value="cancel"></td>
+                                    <td colspan="2"><input type="submit" value="Sign In"></td>
                                 </tr>
                             </tbody>
                         </table>
+                        <p>
+                            if you dont have an acount <a href="Sign-up.html">Sign up</a></p>
+                        </p>
                     </form>
-                    <hr/><br/>
-                    <div>
-                        You are not logged in with an account to edit it. If you have one, <a href="Sections/Account/Sign-in.html">sign-in</a> to your account.<br/>
-                        Otherwise, <a href="Sections/Account/Sign-up.html">sign-up</a>.
-                    </div>
                 </div>
             </article>
-            <aside style="display:flex; flex:1; border:2px solid #111111; border-left-width: 1px; padding: 10px 10px 10px 10px;">
-                <div style="flex:1">
-                    <h2 style="text-align:center;"> Announcements </h2>
-                    <ul>
-                        <li>There will be a night shift today. Prepare your tents.</li>
-                        <li>The tasks have been updated, recently.</li>
-                        <li>There was a data leak do not forget to change your websites.</li>
-                        <li>The summer competitions is open.</li>
-                        <li>You can now manage meetings.</li>
-                        <li>This is the first launch of the website.</li>
-                    </ul>
-                </div>
-            </aside>
             <!-- Place Your Code Here! for all content types like task handler, forms of login and sign-up and so.
                  Be careful with adding divs.
             -->
@@ -134,8 +103,8 @@
                         </ul>
                 </p>
                 <ul>
-                    <li><a href="Credits.html">Credits</a></li>
-                    <li><a href="License.html">License</a></li>
+                    <li><a href="../../Credits.html">Credits</a></li>
+                    <li><a href="../../License.html">License</a></li>
                     <li><a href="#NavBar">Back to the Top of the Page.</a></li>
                     
                 </ul>
