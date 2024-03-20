@@ -6,7 +6,7 @@
         <title>
             School Task Assignment
         </title>
-        <link rel="icon" type="image/x-icon" href="Images/Icons/School.png">
+        <link rel="icon" type="image/x-icon" href="../../Images/Icons/School.png">
     </head>
     <body style="background-color:#cccccc;">
         <header style="text-align:center; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
@@ -21,19 +21,19 @@
             <ul style="display: flex; list-style-type: none; text-align: center; font-size:18px; flex:1; height:auto;">
                 
                 <li style="display: inline;flex:1">
-                    <a href="Home.html"> Home </a>
+                    <a href="../../Home.html"> Home </a>
                 </li>
                 <li style="display: inline;flex:1">
-                    <a href="Tasks.html">Tasks</a>
+                    <a href="../../Tasks.html">Tasks</a>
                 </li>
                 <li style="display: inline;flex:1">
-                    <a href="Meetings.html">Meetings</a>
+                    <a href="../../Meetings.html">Meetings</a>
                 </li>
                 <li style="display: inline;flex:1">
-                    <a href="Profile.html">Profile</a>
+                    <a href="../../Profile.html">Profile</a>
                 </li>
                 <li style="display: inline;flex:1">
-                    <a href="About.html">About</a>
+                    <a href="../../About.html">About</a>
                 </li>
                 <li style="display: inline;flex:1">
                     <form style="display: flex; flex-direction: row;">
@@ -46,7 +46,7 @@
                             </select>
                            
                             <button type="button" title="Search" id= "Search" style="flex:1; background-color: beige; font-size:13px;">
-                                <label for="Search"><img width="13" height="13" src="Images/Icons/Search.png" alt="Search Icon"/>Search</label>
+                                <label for="Search"><img width="13" height="13" src="../../Images/Icons/Search.png" alt="Search Icon"/>Search</label>
                             </button>
                         </div>
                     </form>
@@ -58,7 +58,46 @@
             <article style="display:flex; flex-direction:column; flex:4; border:2px solid #111111; border-right-width: 1px; padding: 10px 10px 10px 10px;">
                 <div style="display:flex; flex-direction:column; flex:1;">
                     <!-- Place Your Code Here! for only content pages like about and display task.-->
-                    <h4>Her will be the schedule of your meetings</h4>
+                    
+                    <div>
+                        <h2>
+                            View List of Tasks - Admin
+                        </h2>
+                        To Create or Edit a Task, press these buttons to open the task creation form.<br/><br/>
+                        <a href="CreateNewTask.html"> <button type="button" id="CreateNewTask" title="You will create new task">Create New Task</button></a>
+                        <!-- View List of Tasks (for Admin) -->
+                        <div id="taskList" style="display:flex; flex-direction:column; flex:1;">
+                            <h2>Tasks</h2>
+                            <ul id="taskItems">
+                                <li>
+                                    <strong>Task 1</strong> - Teacher A - Priority: high
+                                    <a href="CreateNewTask.html">
+                                        <button onclick="editTask(1)">Edit</button>
+                                    </a>
+                                    <button onclick="deleteTask(1)">Delete</button>
+                                </li>
+                                <li>
+                                    <strong>Task 2</strong> - Teacher B - Priority: medium
+                                    <a href="CreateNewTask.html">
+                                        <button onclick="editTask(2)">Edit</button>
+                                    </a>
+                                    <button onclick="deleteTask(2)">Delete</button>
+                                </li>
+                                <li>
+                                    <strong>Task 3</strong> - Teacher C - Priority: low
+                                    <a href="CreateNewTask.html">
+                                        <button onclick="editTask(3)">Edit</button>
+                                    </a>
+                                    <button onclick="deleteTask(3)">Delete</button>
+                                </li>
+                            </ul>
+                            <span>
+                                <a href="CompletedTasks.html">
+                                    View Completed Tasks
+                                </a>
+                            </span>
+                        </div>
+                    </div>
                 </div>
             </article>
             <aside style="display:flex; flex:1; border:2px solid #111111; border-left-width: 1px; padding: 10px 10px 10px 10px;">
@@ -93,8 +132,8 @@
                         </ul>
                 </p>
                 <ul>
-                    <li><a href="Credits.html">Credits</a></li>
-                    <li><a href="License.html">License</a></li>
+                    <li><a href="../../Credits.html">Credits</a></li>
+                    <li><a href="../../License.html">License</a></li>
                     <li><a href="#NavBar">Back to the Top of the Page.</a></li>
                     
                 </ul>
