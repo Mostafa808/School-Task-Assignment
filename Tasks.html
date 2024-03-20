@@ -16,7 +16,7 @@
                 </h1>
             </div>
         </header>
-        <hr>
+        <hr/>
         <nav id="NavBar" style="display:flex;">
             <ul style="display: flex; list-style-type: none; text-align: center; font-size:18px; flex:1; height:auto;">
                 
@@ -53,13 +53,21 @@
                 </li>
             </ul>
         </nav>
-        <hr>
+        <hr/>
         <main style="display:flex; margin: 20px 20px;">
             <article style="display:flex; flex-direction:column; flex:4; border:2px solid #111111; border-right-width: 1px; padding: 10px 10px 10px 10px;">
                 <div style="display:flex; flex-direction:column; flex:1;">
                     <!-- Place Your Code Here! for only content pages like about and display task.-->
                     <h4>Manage or view your tasks and other' tasks.</h4>
-                    <a href="CreateNewTask.html"> Create New Task</a>
+                    <form>
+                            <a href="Sections/Tasks/ViewTaskAdmin.html">
+                                <button type="button" id="ViewTaskAdmin">View Task by Admin</button>
+                            </a>
+                            <br/>
+                            <a href="Sections/Tasks/ViewTaskTeacher.html">
+                                <button type="button" id="ViewTaskTeacher">View Task by Teacher</button>
+                            </a>
+                    </form>
                 </div>
             </article>
             <aside style="display:flex; flex:1; border:2px solid #111111; border-left-width: 1px; padding: 10px 10px 10px 10px;">
@@ -80,18 +88,19 @@
             -->
         </main>
         <footer>
-            <hr>
+            <hr/>
             <div style="margin:20px 20px;">
                 <h4>Contact Us:</h4>
                 <p id="Contacts">
                     <i>20, Cairo Uneversity ST, Giza</i><br/>
                     Tel:<b>+201114435107</b><br/>
                     <h4><b>Mail The School:</b></h4>
-                        <ul>
-                            <li><a href="mailto:mohamedwali9091@gmail.com">School Principal</a></li>
-                            <li><a href="mailto:jonathanmokhles@gmail.com">Enrollment Office</a></li>
-                            <li><a href="mailto:lokliehchuol@gmail.com">HR Department</a></li>
-                        </ul>
+                    <ul>
+                        <li><a href="mailto:mohamedwali9091@gmail.com">School Principal</a></li>
+                        <li><a href="mailto:jonathanmokhles@gmail.com">Enrollment Office</a></li>
+                        <li><a href="mailto:lokliehchuol@gmail.com">HR Department</a></li>
+                        <li><a href="mailto:nhial1994@gmail.com">Member</a></li>
+                    </ul>
                 </p>
                 <ul>
                     <li><a href="Credits.html">Credits</a></li>

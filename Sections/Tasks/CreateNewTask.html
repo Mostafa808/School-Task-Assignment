@@ -6,7 +6,7 @@
         <title>
             School Task Assignment
         </title>
-        <link rel="icon" type="image/x-icon" href="Images/Icons/School.png">
+        <link rel="icon" type="image/x-icon" href="../../Images/Icons/School.png">
     </head>
     <body style="background-color:#cccccc;">
         <header style="text-align:center; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
@@ -21,19 +21,19 @@
             <ul style="display: flex; list-style-type: none; text-align: center; font-size:18px; flex:1; height:auto;">
                 
                 <li style="display: inline;flex:1">
-                    <a href="Home.html"> Home </a>
+                    <a href="../../Home.html"> Home </a>
                 </li>
                 <li style="display: inline;flex:1">
-                    <a href="Tasks.html">Tasks</a>
+                    <a href="../../Tasks.html">Tasks</a>
                 </li>
                 <li style="display: inline;flex:1">
-                    <a href="Meetings.html">Meetings</a>
+                    <a href="../../Meetings.html">Meetings</a>
                 </li>
                 <li style="display: inline;flex:1">
-                    <a href="Profile.html">Profile</a>
+                    <a href="../../Profile.html">Profile</a>
                 </li>
                 <li style="display: inline;flex:1">
-                    <a href="About.html">About</a>
+                    <a href="../../About.html">About</a>
                 </li>
                 <li style="display: inline;flex:1">
                     <form style="display: flex; flex-direction: row;">
@@ -46,7 +46,7 @@
                             </select>
                            
                             <button type="button" title="Search" id= "Search" style="flex:1; background-color: beige; font-size:13px;">
-                                <label for="Search"><img width="13" height="13" src="Images/Icons/Search.png" alt="Search Icon"/>Search</label>
+                                <label for="Search"><img width="13" height="13" src="../../Images/Icons/Search.png" alt="Search Icon"/>Search</label>
                             </button>
                         </div>
                     </form>
@@ -58,30 +58,45 @@
             <article style="display:flex; flex-direction:column; flex:4; border:2px solid #111111; border-right-width: 1px; padding: 10px 10px 10px 10px;">
                 <div style="display:flex; flex-direction:column; flex:1;">
                     <!-- Place Your Code Here! for only content pages like about and display task.-->
-                    <h1>Profile Settings</h1>
-                    <form>
-                        <label for ="username">Name</label>
-                        <input type="text" id="username" name="username" autocomplete="username" required>
-                        <br/>
-                        <label for ="email">Email</label>
-                        <input type="email" id="email" name="Email" autocomplete="email" required>
-                        <br/>
-                        <label for ="age">Age</label>
-                        <input type="number" id="age" name="age" accept="number" required>
-                        <br/>
-                        <label for ="city">City</label>
-                        <input type="text" id="city" name="city" required>
-                        <hr/>
-                        <label for ="profile">Profile Image"</label>
-                        <input type="file" id="profile" name="profile-image" accept="imge/*">
-                        <hr/>
-                        <input type="submit" value="save">
-                        <input type="button" value="cancel">
-                    </form>
-                    <hr/><br/>
-                    <div>
-                        You are not logged in with an account to edit it. If you have one, <a href="Sign-in.html">sign-in</a> to your account.<br/>
-                        Otherwise, <a href="Sign-up.html">sign-up</a>.
+                    <h2 style="text-align: center;">
+                        Create New Task
+                    </h2>
+                    <div style="display:flex; flex-direction:column; flex:1; text-align: center;">
+                        <form>
+                            <div>
+                                <div>
+                                    <lapel for="TaskTitleInput"> Task Title</lapel>
+                                    <input type="text" id="TaskTitleInput" title = "Please Enter the Name of the Task" placeholder="First Report"  required>
+                                </div>
+                                <br/>
+                                <div>
+                                    <lapel> Teacher Username</lapel>
+                                    <input type="text" name="TeacherNameInput" title = "Please Enter the Teacher Username" placeholder="MathsTeacher" required>
+                                </div>
+                                <br/>
+                                <div>
+                                    Priority<br/>
+                                    <input type="radio" id="low" name="priority" value="low">
+                                    <label for="low">low</label><br/>
+                                    <input type="radio" id="medium" name="priority" value="medium">
+                                    <label for="medium">medium</label><br/>
+                                    <input type="radio" id="high" name="priority" value="high">
+                                    <label for="high">high</label>
+                                </div>
+                                <br/>
+                                <div>
+                                    <label for="deadline">deadline (date and time):</label>
+                                    <input type="datetime-local" id="deadline" name="deadline">
+                                </div>
+                                <br/>
+                                <lapel> Description</lapel><br/>
+                                <textarea name="Describe" id="" cols="50" rows="15" title="Place the Description Here"></textarea>
+                                <br/>
+                                <div>
+                                    <input type="submit" value="Create">
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </article>
@@ -104,8 +119,8 @@
                         </ul>
                 </p>
                 <ul>
-                    <li><a href="Credits.html">Credits</a></li>
-                    <li><a href="License.html">License</a></li>
+                    <li><a href="../../Credits.html">Credits</a></li>
+                    <li><a href="../../License.html">License</a></li>
                     <li><a href="#NavBar">Back to the Top of the Page.</a></li>
                     
                 </ul>
