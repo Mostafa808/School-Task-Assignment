@@ -56,78 +56,38 @@
         <hr/>
         <main style="display:flex; margin: 20px 20px;">
             <article style="display:flex; flex-direction:column; flex:4; border:2px solid #111111; border-right-width: 1px; padding: 10px 10px 10px 10px;">
-                <div style="display:flex; flex-direction:column; flex:1; text-align:center;">
+                <div style="display:flex; flex-direction:column; flex:1;">
                     <!-- Place Your Code Here! for only content pages like about and display task.-->
-                    <h1>Profile Settings</h1>
-                    <form class="profil-setiing">
-                        <table cellpadding="2">
-                            <tbody>
-                                <tr>
-                                    <td><label for ="username">Name: </label></td>
-                                    <td><input type="text" id="username" name="username" autocomplete="username" required></td>
-                                </tr>
-                                <tr>
-                                    <td><label for ="email">Email: </label></td>
-                                    <td><input type="email" id="email" name="Email" autocomplete="email" required></td>
-                                </tr>
-                                <tr>
-                                    <td><label for ="age">Age: </label></td>
-                                    <td><input type="number" id="age" name="age" accept="number" required></td>
-                                </tr>
-                                <tr>
-                                    <td><label for ="city">City: </label></td>
-                                    <td><input type="text" id="city" name="city" required></td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2"><hr/></td>
-                                </tr>
-                                <tr>
-                                    <td><label for ="profile">Profile Image: </label></td>
-                                    <td><input type="file" id="profile" name="profile-image" accept="imge/*"></td>
-                                </tr>
-                                <tr>
-                                    <td><label for ="profile">Profile Image: </label></td>
-                                    <td>
-                                        <select id="user-css">
+                    <div class="sort-by">
+                        <label for="order-by">Sort by </label>
+                        
+                            <select id="order-by" form="search-form" name="sortBy">
+                                <option value="name"selected>
+                                        name
+                                    </option>
+                                <option value="age">
+                                        age
+                                    </option>
+                                <option value="time-joined">
+                                        time joined
+                                    </option>
+                                
+                            </select>
+                        
+                            
 
-                                        
-                                       </select>
-                                </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2"><hr/></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="positive"type="button" value="save"></td>
-                                    <td><input class="negative" type="button" value="cancel"></td>
-                                </tr>
-                                <tr>
-                                    <td><input type="button" value="change password"></td>
-                                    
-                                </tr>
-                            </tbody>
-                        </table>
-                    </form>
-                    <hr/><br/>
-                    <div>
-                        You are not logged in with an account to edit it. If you have one, <a href="Sections/Account/Sign-in.html">sign-in</a> to your account.<br/>
-                        Otherwise, <a href="Sections/Account/Sign-up.html">sign-up</a>.
+                        
+                        
                     </div>
+                            
+            
+                    
+                        
+                    
+                    
+            
                 </div>
             </article>
-            <aside style="display:flex; flex:1; border:2px solid #111111; border-left-width: 1px; padding: 10px 10px 10px 10px;">
-                <div style="flex:1">
-                    <h2 style="text-align:center;"> Announcements </h2>
-                    <ul>
-                        <li>There will be a night shift today. Prepare your tents.</li>
-                        <li>The tasks have been updated, recently.</li>
-                        <li>There was a data leak do not forget to change your websites.</li>
-                        <li>The summer competitions is open.</li>
-                        <li>You can now manage meetings.</li>
-                        <li>This is the first launch of the website.</li>
-                    </ul>
-                </div>
-            </aside>
             <!-- Place Your Code Here! for all content types like task handler, forms of login and sign-up and so.
                  Be careful with adding divs.
             -->
