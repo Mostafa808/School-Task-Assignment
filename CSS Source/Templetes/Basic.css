@@ -1,0 +1,237 @@
+/*The Body*/
+body{
+    background-color: #cccccc;
+}
+hr{
+    border-width: 3px;
+}
+/*The header*/
+header{
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+header > div > h1{
+    font-size: 1.5em;
+    margin-block-start: 0.40em;
+    margin-block-end: 0em;
+}
+/*The Nav Bar*/
+nav{
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    height: 50px;
+    width: 100%;
+}
+nav *{
+    height: 100%;
+    max-height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+
+nav img{
+    display: block;
+    max-width: 100%;
+    border-radius: 10px;
+    object-fit: contain;
+}
+nav > ul{
+    display: flex;
+    list-style-type: none;
+    flex: 1;
+}
+nav > ul > li{
+    display: flex;
+    height: 100%;
+    align-items:inherit;
+    text-align: inherit;
+    flex:1;
+}
+nav > ul > li > *{
+    flex: 1;
+}
+/* nav buttons*/
+nav > ul > li > button{
+    background-color: lightblue;
+    font-size: larger;
+}
+nav > ul > li > button:hover{
+    background-color: blue;
+    scale: 0.9;
+    transition: scale 0.5s;
+}
+nav > ul > li > button:active{
+    background-color: lightcoral;
+}
+#open-profile:hover{
+    scale: 1.8 1.1;
+    transition: scale 0.8s;
+}
+#NavBar > ul > li:nth-child(1){
+    flex: none;
+    padding: 2%;
+}
+
+nav > ul > li.basic-search{
+    flex: 2
+}
+nav > ul > li.basic-search > form div, nav > ul > li.basic-search > form label{
+    display: flex;
+}
+nav > ul > li.basic-search > form > div > div{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+nav > ul > li > form{
+    flex: 1;
+}
+nav > ul > li > form > div > input{
+    flex: 2;
+}
+nav > ul > li > form > div > input,
+nav > ul > li > form > div > div > *,
+nav > ul > li > form > div > div > div > *{
+    flex: 1;
+}
+nav > ul > li > form button{
+    aspect-ratio: 4;
+}
+/*main section*/
+main{
+    display:flex;
+    margin: 0px 20px;
+}
+/*article section*/
+article{
+    display:flex;
+    flex-direction:column;
+    flex:4;
+    border:3px solid #111111;
+    border-collapse: collapse;
+    border-radius: 10px;
+    padding: 10px 10px 10px 10px;
+    background-color: cornsilk;
+    width: 77%;
+    max-width: 77%;
+
+    transition: max-width 0.5s ease-in;
+
+}
+article > div{
+    display: flex;
+    flex-direction:column;
+    flex:1;
+}
+/*side section*/
+aside{
+    display:flex;
+    border:3px solid #111111;
+    border-collapse: collapse;
+    border-radius: 10px;
+    padding: 10px 10px 10px 10px;
+    background-color: antiquewhite;
+    position: fixed;
+    right: 0vh;
+    width: 20%;
+    max-width: 20%;
+    height: 84vh;
+    max-height: 84vh;
+
+    transition: width 0.5s ease-in;
+}
+aside > div{
+    flex: 10;
+}
+aside > img{
+    max-width: 10%;
+    max-height: auto;
+    background-color: rgba(2, 200, 255, 0.378);
+    border-radius: 10px;
+    flex: 1;
+    align-self: center;
+    cursor: pointer;
+    transition: max-width 0.5s ease-in;
+}
+
+aside > div > h2{
+    text-align: center;
+}
+aside > div > ul{
+    max-height: 90%;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    padding-inline-start: 0px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+aside > div > ul > li{
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 2;
+    border-color: black;
+    padding: 3px;
+    margin: 3px;
+    background-color: white;
+}
+/*side actions*/
+.side-close{
+    width: 3%;
+    transition: width 0.5s ease-in;
+}
+.side-close > img{
+    max-width: 100%;
+    transition: max-width 0.5s ease-in;
+}
+.side-close > div{
+    display: none;
+}
+.article-expand{
+    max-width: 94.6%;
+    transition: max-width 0.5s ease-in;
+}
+/*footer section*/
+footer > div{
+    background-color: rgb(207, 161, 44);
+    border-radius: 25px;
+    border-style: dotted;
+    border-width: 3px;
+    padding: 30px;
+    border-color: black;
+}
+footer > div > ul{
+    display: flex;
+    list-style-type: none;
+    text-align: center;
+}
+footer > div > ul > li{
+    flex: 1;
+    border-radius: 15px;
+    background-color: palegreen;
+    margin: 3px 20px;
+}
+/* options */
+.column-flex{
+    flex-direction: column;
+}
+.pressable{
+    cursor: pointer;
+}
+
+.current-page{
+    background-color: greenyellow;
+}
+/* General */
+a:link{
+    text-decoration: none;
+    color: blue;
+}
+a:visited{
+    color: #000;
+}
+a:hover{
+    background-color: hsla(49, 95%, 25%, 0.371);
+    color: red;
+}

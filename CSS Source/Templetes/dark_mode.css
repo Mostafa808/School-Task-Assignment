@@ -1,0 +1,59 @@
+/*The Body*/
+body{
+    background-color: #cccccc;
+}
+
+
+/* nav buttons*/
+nav > ul > li > button{
+    background-color: lightblue;
+}
+nav > ul > li > button:hover{
+    background-color: blue;
+}
+nav > ul > li > button:active{
+    background-color: lightcoral;
+}
+/*article section*/
+article{
+    border:3px solid #111111;
+    background-color: cornsilk;
+}
+/*side section*/
+aside{
+    border:3px solid #111111;
+    background-color: antiquewhite;
+}
+
+aside > img{
+    background-color: rgba(2, 200, 255, 0.378);
+}
+
+aside > div > ul > li{
+    border-color: black;
+    background-color: white;
+}
+/*footer section*/
+footer > div{
+    background-color: rgb(207, 161, 44);
+    border-color: black;
+}
+
+footer > div > ul > li{
+    background-color: palegreen;
+}
+
+.current-page{
+    background-color: greenyellow;
+}
+/* General */
+a:link{
+    color: blue;
+}
+a:visited{
+    color: #000;
+}
+a:hover{
+    background-color: hsla(49, 95%, 25%, 0.371);
+    color: red;
+}
