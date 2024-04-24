@@ -13,7 +13,7 @@ function profile_handle_buttons(current_element){
         if(Boolean(birth_date.value)) current_user.birth_date = birth_date.value;
         if(Boolean(address.value)) current_user.address = address.value;
         if(Boolean(department.value)) current_user.department = department.value;
-        if(Boolean(is_admin.value)) current_user.is_admin = is_admin.value;
+        current_user.is_admin = is_admin.checked;
         if(Boolean(profile_image.value)) current_user.profile_image = profile_image.value;
         
         current_user.website_view = website_view.value;
@@ -93,7 +93,7 @@ function profile_handle_buttons(current_element){
         if(Boolean(birth_date.value)) current_user.birth_date = birth_date.value;
         if(Boolean(address.value)) current_user.address = address.value;
         if(Boolean(department.value)) current_user.department = department.value;
-        if(Boolean(is_admin.value)) current_user.is_admin = is_admin.checked;
+        current_user.is_admin = is_admin.checked;
         
         if (users_handler.search(current_user_name.value)!=null){
             window.alert("This username is already taken.")
@@ -119,7 +119,7 @@ function current_data(){
     if(Boolean(current_user.birth_date)) birth_date.value = current_user.birth_date;
     if(Boolean(current_user.address)) address.placeholder = current_user.address;
     if(Boolean(current_user.department)) department.value = current_user.department;
-    if(Boolean(current_user.is_admin)) is_admin.checked = current_user.is_admin;
+    is_admin.checked = current_user.is_admin;
     if(Boolean(current_user.profile_image)) profile_image.placeholder = current_user.profile_image;
     if(Boolean(current_user.website_view)) website_view.value = current_user.website_view;
 }
