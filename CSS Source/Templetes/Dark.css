@@ -1,0 +1,130 @@
+body{
+    background-color: #121212; 
+    color: #e0e0e0; 
+}
+nav > ul > li > button{
+    background-color: #333333; 
+    color: #ffffff; 
+}
+nav > ul > li > button:hover{
+    background-color: #555555; 
+}
+nav > ul > li > button:active{
+    background-color: #777777; 
+}
+
+
+article{
+    border: 3px solid #222222; 
+    background-color: #1e1e1e;
+}
+
+
+aside{
+    border: 3px solid #222222; 
+    background-color: #252525; 
+}
+
+aside > img{
+    background-color: #2d2d2d; 
+}
+
+aside > div > ul > li{
+    border-color: #2d2d2d; 
+    background-color: #2d2d2d; 
+}
+
+footer > div{
+    background-color: #2c3e50; 
+    border-color: #2d2d2d; 
+}
+
+footer > div > ul > li{
+    background-color: #34495e; 
+}
+
+.current-page{
+    background-color: #16a085; 
+}
+a:link{
+    color: #1abc9c; 
+}
+a:visited{
+    color: #9b59b6; 
+}
+a:hover{
+    background-color: #3498db; 
+    color: #ecf0f1; 
+}body{
+    background-color: #121212; 
+    color: #e0e0e0; 
+}
+nav > ul > li > button{
+    background-color: #333333; 
+    color: #ffffff; 
+}
+nav > ul > li > button:hover{
+    background-color: #555555; 
+}
+nav > ul > li > button:active{
+    background-color: #777777; 
+}
+
+
+article{
+    border: 3px solid #222222; 
+    background-color: #1e1e1e;
+}
+
+
+aside{
+    border: 3px solid #222222; 
+    background-color: #252525; 
+}
+
+aside > img{
+    background-color: #2d2d2d; 
+}
+
+aside > div > ul > li{
+    border-color: #2d2d2d; 
+    background-color: #2d2d2d; 
+}
+
+footer > div{
+    background-color: #2c3e50; 
+    border-color: #2d2d2d; 
+}
+
+footer > div > ul > li{
+    background-color: #34495e; 
+}
+
+.current-page{
+    background-color: #16a085; 
+}
+a:link{
+    color: #1abc9c; 
+}
+a:visited{
+    color: #9b59b6; 
+}
+a:hover{
+    background-color: #3498db; 
+    color: #ecf0f1; 
+}
+button{
+    background-color: ecf0f1;
+}
+button:hover{
+    background-color: gold;
+    transition: background-color 0.5s;
+}
+button:active{
+    background-color: lightcoral;
+    transition: background-color 0.5s;
+}
+.float-box{
+    border-color: gold;
+    background-color: rgb(65, 34, 34);
+}

@@ -1,0 +1,9 @@
+article{
+    text-align: center;
+}
+article > div > form{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column-reverse;
+}

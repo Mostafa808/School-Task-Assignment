@@ -1,0 +1,56 @@
+body{
+    background-color: #ffe4e1; 
+}
+nav > ul > li > button{
+    background-color: #6b8e23; 
+}
+nav > ul > li > button:hover{
+    background-color: #556b2f; 
+}
+nav > ul > li > button:active{
+    background-color: #800000; 
+}
+article{
+    border: 3px solid #deb887; 
+    background-color: #fff5ee; 
+}
+aside{
+    border: 3px solid #deb887; 
+    background-color: #f5f5dc; 
+}
+
+aside > img{
+    background-color: rgba(255, 140, 0, 0.5); 
+}
+
+aside > div > ul > li{
+    border-color: #deb887;
+    background-color: #fffff0; 
+}
+
+footer > div{
+    background-color: #4682b4; 
+    border-color: #deb887; 
+}
+
+footer > div > ul > li{
+    background-color: #e0ffff; 
+}
+
+.current-page{
+    background-color: #b0e0e6; 
+}
+a:link{
+    color: #e516db; 
+}
+a:visited{
+    color: #7811ab; 
+}
+a:hover{
+    background-color: hsla(34, 100%, 50%, 0.5); 
+    color: #ffe8f3; 
+}
+.float-box{
+    border-color: rgb(1, 48, 52);
+    background-color: rgb(238, 206, 206);
+}

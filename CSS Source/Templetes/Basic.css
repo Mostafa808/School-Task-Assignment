@@ -114,6 +114,7 @@ article{
     padding: 10px 10px 10px 10px;
     background-color: cornsilk;
     width: 77%;
+    height: 88vh;
     max-width: 77%;
 
     transition: max-width 0.5s ease-in;
@@ -219,6 +220,33 @@ footer > div > ul > li{
 .pressable{
     cursor: pointer;
 }
+.not-used{
+    display: none;
+}
+.float-box.used{
+    display: flex;
+}
+.float-box{
+    border-radius: 10px;
+    border-color: darkblue;
+    border-width: 3px;
+    border-style: solid;
+    font-size: large;
+    align-items: center;
+    text-align: center;
+    background-color: lightblue;
+    width: 10vw;
+    flex-direction: column;
+    left: 6.5vw;
+    z-index: 2;
+    position: fixed;
+    transform: translate(-50%);
+}
+.float-box > a{
+    background-color: inherit;
+    margin: 3px;
+    border-radius: 4px;
+}
 
 .current-page{
     background-color: greenyellow;
@@ -234,4 +262,17 @@ a:visited{
 a:hover{
     background-color: hsla(49, 95%, 25%, 0.371);
     color: red;
+}
+button{
+    background-color: white;
+    font-size: medium;
+}
+button:hover{
+    background-color: gold;
+    transition: background-color 0.5s;
+}
+button:active{
+    background-color: lightcoral;
+    transition: background-color 0.5s;
+
 }

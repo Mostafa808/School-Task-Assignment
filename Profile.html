@@ -4,120 +4,151 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
         <title>
-            School Task Assignment
+            School Task Assignment - Profile Settings
         </title>
         <link rel="icon" type="image/x-icon" href="Images/Icons/School.png">
+        <link rel="stylesheet" href="CSS Source/Templetes/Basic.css">
+        <link rel="stylesheet" href="CSS Source/Profile_Settings.css">
+        <script src="JS Source/Templetes/Basic.js"></script>
+        <script src="JS Source/Profile_Settings.js"></script>
     </head>
-    <body style="background-color:#cccccc;">
-        <header style="text-align:center; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+    <body>
+        <header>
             <div>
                 <h1>
                     School Management
                 </h1>
             </div>
         </header>
-        <hr/>
-        <nav id="NavBar" style="display:flex;">
-            <ul style="display: flex; list-style-type: none; text-align: center; font-size:18px; flex:1; height:auto;">
-                
-                <li style="display: inline;flex:1">
-                    <a href="Home.html"> Home </a>
+        <nav id="NavBar">
+            <ul>
+                <li>
+                    <div>
+                        <img src="Images/Users/User/Profile.png" alt = "Profile Image" id="open-profile" class="pressable" onclick="handle_tap(this)">
+                    </div>
                 </li>
-                <li style="display: inline;flex:1">
-                    <a href="Tasks.html">Tasks</a>
+                <li >
+                    <button type="button" title="Open Home" id="open-home" onclick="handle_tap(this)">
+                        Home 
+                    </button>
                 </li>
-                <li style="display: inline;flex:1">
-                    <a href="Meetings.html">Meetings</a>
+                <li>
+                    <button type="button" title="Open Tasks" id="open-tasks" class="current-page" onclick="handle_tap(this)">
+                        Tasks
+                    </button>
                 </li>
-                <li style="display: inline;flex:1">
-                    <a href="Profile.html">Profile</a>
+                <li class="not-used">
+                    <button type="button" title="Open Meetings" id="open-Meetings" onclick="handle_tap(this)">
+                        Meetings
+                    </button>
                 </li>
-                <li style="display: inline;flex:1">
-                    <a href="About.html">About</a>
+                <li class="not-used">
+                    <button type="button" title="Open About" id="open-about" onclick="handle_tap(this)">
+                        About
+                    </button>
                 </li>
-                <li style="display: inline;flex:1">
-                    <form style="display: flex; flex-direction: row;">
-                        <input type="text" id= "SearchField" placeholder="Principal Profile" style="flex:3;">
-                        <div style="flex:2; display: flex;flex-direction: column;">
-                            <select id="SearchType" name="SearchType" title="Search Type" style="flex:2; text-align: center;">
-                                <option value="Profile" selected>Profile</option>
-                                <option value="Tasks">Tasks</option>
-                                <option value="Meeting">Meeting</option>
-                            </select>
-                           
-                            <button type="button" title="Search" id= "Search" style="flex:1; background-color: beige; font-size:13px;">
-                                <label for="Search"><img width="13" height="13" src="Images/Icons/Search.png" alt="Search Icon"/>Search</label>
-                            </button>
+                <li class="basic-search">
+                    <form>
+                        <div>
+                            <input type="text" id= "SearchField" placeholder="School Broadcast Task">
+                        
+                        <div class="column-flex">
+                            <div>
+                                <select id="SearchType" name="SearchType" title="Search Type">
+                                    <option value="Profile" class="not-used">Profile</option>
+                                    <option value="Tasks" selected>Tasks</option>
+                                    <option value="Meeting" class="not-used">Meeting</option>
+                                </select>
+                            </div>
+                            <div>
+                                <button type="button" title="Search" id= "Search" onclick="handle_tap(this)">
+                                    <label for="Search">
+                                        <div>
+                                            <img src="Images/Icons/Search.png" alt="Search Icon"/>
+                                        </div>
+                                        <div>Search</div>
+                                    </label>
+                                </button>
+                            </div>
                         </div>
                     </form>
                 </li>
+                
             </ul>
         </nav>
+        <div id="profile-handler" class = 'float-box not-used'>
+            <div>hi</div>
+            <div>you</div>
+        </div>
         <hr/>
-        <main style="display:flex; margin: 20px 20px;">
-            <article style="display:flex; flex-direction:column; flex:4; border:2px solid #111111; border-right-width: 1px; padding: 10px 10px 10px 10px;">
-                <div style="display:flex; flex-direction:column; flex:1; text-align:center;">
+        <main>
+            <article onclick="handle_tap(this)">
+                <div>
                     <!-- Place Your Code Here! for only content pages like about and display task.-->
                     <h1>Profile Settings</h1>
                     <form class="profil-setiing">
                         <table cellpadding="2">
                             <tbody>
                                 <tr>
-                                    <td><label for ="username">Name: </label></td>
-                                    <td><input type="text" id="username" name="username" autocomplete="username" required></td>
+                                    <td><label for ="full-name">Full Name: </label></td>
+                                    <td><input type="text" id="full-name" name="full-name" autocomplete="username"></td>
                                 </tr>
                                 <tr>
                                     <td><label for ="email">Email: </label></td>
-                                    <td><input type="email" id="email" name="Email" autocomplete="email" required></td>
+                                    <td><input type="email" id="email" name="Email" autocomplete="email"></td>
                                 </tr>
                                 <tr>
-                                    <td><label for ="age">Age: </label></td>
-                                    <td><input type="number" id="age" name="age" accept="number" required></td>
+                                    <td><label for ="birth-date">Birth Date: </label></td>
+                                    <td><input type="date" id="birth-date" name="birth-date"></td>
                                 </tr>
                                 <tr>
-                                    <td><label for ="city">City: </label></td>
-                                    <td><input type="text" id="city" name="city" required></td>
+                                    <td><label for ="address">Address: </label></td>
+                                    <td><input type="text" id="address" name="address"></td>
                                 </tr>
                                 <tr>
-                                    <td colspan="2"><hr/></td>
-                                </tr>
-                                <tr>
-                                    <td><label for ="profile">Profile Image: </label></td>
-                                    <td><input type="file" id="profile" name="profile-image" accept="imge/*"></td>
-                                </tr>
-                                <tr>
-                                    <td><label for ="profile">Profile Image: </label></td>
+                                    <td><label for="department">Department:</label></td>
                                     <td>
-                                        <select id="user-css">
-
-                                        
-                                       </select>
-                                </td>
+                                        <select id="department" name="department">
+                                            <option value="general">General</option>
+                                            <option value="ma">Maths</option>
+                                            <option value="ar">Arabic</option>
+                                            <option value="cs">Computer Science</option>
+                                            <option value="en">Englich</option>
+                                            <option value="sc">Science</option>
+                                            <option value="arts">Arts</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label for="is_admin">Admin User?</label></td>
+                                    <td><input type="checkbox" id="is_admin" name="is_admin"></td>
                                 </tr>
                                 <tr>
                                     <td colspan="2"><hr/></td>
                                 </tr>
                                 <tr>
-                                    <td><input class="positive"type="button" value="save"></td>
-                                    <td><input class="negative" type="button" value="cancel"></td>
+                                    <td><label for="profile_image">Profile Image:</label></td>
+                                    <td><input type="url" id="profile_image" name="profile_image" placeholder="Enter Image URL"></td>
                                 </tr>
                                 <tr>
-                                    <td><input type="button" value="change password"></td>
-                                    
+                                    <td colspan="2"><hr/></td>
+                                </tr>
+                                <tr>
+                                    <td><input class="positive" id="save" type="button" value="save" onclick="profile_handle_buttons(this)"></td>
+                                    <td><input class="negative" id="cancel" type="button" value="cancel" onclick="profile_handle_buttons(this)"></td>
+                                </tr>
+                                <tr>
+                                    <input type="button" id="change-password" value="change password" onclick="profile_handle_buttons(this)">
                                 </tr>
                             </tbody>
                         </table>
                     </form>
-                    <hr/><br/>
-                    <div>
-                        You are not logged in with an account to edit it. If you have one, <a href="Sections/Account/Sign-in.html">sign-in</a> to your account.<br/>
-                        Otherwise, <a href="Sections/Account/Sign-up.html">sign-up</a>.
-                    </div>
                 </div>
             </article>
-            <aside style="display:flex; flex:1; border:2px solid #111111; border-left-width: 1px; padding: 10px 10px 10px 10px;">
-                <div style="flex:1">
-                    <h2 style="text-align:center;"> Announcements </h2>
+            <aside onclick="handle_tap(this)">
+                <img src="Images/Icons/right_arrow.png" alt="Right Arrow" onclick="show_hide_side()">
+                <div>
+                    <h2> Announcements </h2>
                     <ul>
                         <li>There will be a night shift today. Prepare your tents.</li>
                         <li>The tasks have been updated, recently.</li>
@@ -132,9 +163,9 @@
                  Be careful with adding divs.
             -->
         </main>
-        <footer>
+        <footer onclick="handle_tap(this)">
             <hr/>
-            <div style="margin:20px 20px;">
+            <div>
                 <h4>Contact Us:</h4>
                 <p id="Contacts">
                     <i>20, Cairo Uneversity ST, Giza</i><br/>
@@ -147,12 +178,17 @@
                         </ul>
                 </p>
                 <ul>
-                    <li><a href="Credits.html">Credits</a></li>
-                    <li><a href="License.html">License</a></li>
+                    <li><a href="Credits.pdf">Credits</a></li>
+                    <li><a href="LICENSE">License</a></li>
                     <li><a href="#NavBar">Back to the Top of the Page.</a></li>
                     
                 </ul>
             </div>
         </footer>
+        <div id="document-handler" class="not-used">
+
+        </div>
+        <script>current_data()</script>
+        <script>show_hide_side()</script>
     </body>
 </html>

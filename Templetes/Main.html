@@ -7,62 +7,88 @@
             School Task Assignment
         </title>
         <link rel="icon" type="image/x-icon" href="Images/Icons/School.png">
+        <link rel="stylesheet" href="CSS Source/Templetes/Basic.css">
+        <script src="JS Source/Templetes/Basic.js"></script>
     </head>
-    <body style="background-color:#cccccc;">
-        <header style="text-align:center; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+    <body>
+        <header>
             <div>
                 <h1>
                     School Management
                 </h1>
             </div>
         </header>
-        <hr/>
-        <nav id="NavBar" style="display:flex;">
-            <ul style="display: flex; list-style-type: none; text-align: center; font-size:18px; flex:1; height:auto;">
-                
-                <li style="display: inline;flex:1">
-                    <a href="Home.html"> Home </a>
+        <nav id="NavBar">
+            <ul>
+                <li>
+                    <div>
+                        <img src="Images/Users/User/Profile.png" alt = "Profile Image" id="open-profile" class="pressable" onclick="handle_tap(this)">
+                    </div>
                 </li>
-                <li style="display: inline;flex:1">
-                    <a href="Tasks.html">Tasks</a>
+                <li >
+                    <button type="button" title="Open Home" id="open-home" class="current-page" onclick="handle_tap(this)">
+                        Home 
+                    </button>
                 </li>
-                <li style="display: inline;flex:1">
-                    <a href="Meetings.html">Meetings</a>
+                <li>
+                    <button type="button" title="Open Tasks" id="open-tasks" onclick="handle_tap(this)">
+                        Tasks
+                    </button>
                 </li>
-                <li style="display: inline;flex:1">
-                    <a href="Profile.html">Profile</a>
+                <li class="not-used">
+                    <button type="button" title="Open Meetings" id="open-Meetings" onclick="handle_tap(this)">
+                        Meetings
+                    </button>
                 </li>
-                <li style="display: inline;flex:1">
-                    <a href="About.html">About</a>
+                <li class="not-used">
+                    <button type="button" title="Open About" id="open-about" onclick="handle_tap(this)">
+                        About
+                    </button>
                 </li>
-                <li style="display: inline;flex:1">
-                    <form style="display: flex; flex-direction: row;">
-                        <input type="text" id= "SearchField" placeholder="Principal Profile" style="flex:3;">
-                        <div style="flex:2; display: flex;flex-direction: column;">
-                            <select id="SearchType" name="SearchType" title="Search Type" style="flex:2; text-align: center;">
-                                <option value="Profile" selected>Profile</option>
-                                <option value="Tasks">Tasks</option>
-                                <option value="Meeting">Meeting</option>
-                            </select>
-                           
-                            <button type="button" title="Search" id= "Search" style="flex:1; background-color: beige; font-size:13px;">
-                                <label for="Search"><img width="13" height="13" src="Images/Icons/Search.png" alt="Search Icon"/>Search</label>
-                            </button>
+                <li class="basic-search">
+                    <form>
+                        <div>
+                            <input type="text" id= "SearchField" placeholder="School Broadcast Task">
+                        
+                        <div class="column-flex">
+                            <div>
+                                <select id="SearchType" name="SearchType" title="Search Type">
+                                    <option value="Profile" class="not-used">Profile</option>
+                                    <option value="Tasks" selected>Tasks</option>
+                                    <option value="Meeting" class="not-used">Meeting</option>
+                                </select>
+                            </div>
+                            <div>
+                                <button type="button" title="Search" id= "Search" onclick="handle_tap(this)">
+                                    <label for="Search">
+                                        <div>
+                                            <img src="Images/Icons/Search.png" alt="Search Icon"/>
+                                        </div>
+                                        <div>Search</div>
+                                    </label>
+                                </button>
+                            </div>
                         </div>
                     </form>
                 </li>
+                
             </ul>
         </nav>
+        <div id="profile-handler" class = 'float-box not-used'>
+            <div>hi</div>
+            <div>you</div>
+        </div>
         <hr/>
-        <main style="display:flex; margin: 20px 20px;">
-            <article style="display:flex; flex-direction:column; flex:4; border:2px solid #111111; border-right-width: 1px; padding: 10px 10px 10px 10px;">
-                <div style="display:flex; flex-direction:column; flex:1;">
+        <main>
+            <article onclick="handle_tap(this)">
+                <div>
                     <!-- Place Your Code Here! for only content pages like about and display task.-->
                 </div>
             </article>
-            <aside style="display:flex; flex:1; border:2px solid #111111; border-left-width: 1px; padding: 10px 10px 10px 10px;">
-                <div style="flex:1">
-                    <h2 style="text-align:center;"> Announcements </h2>
+            <aside onclick="handle_tap(this)">
+                <img src="Images/Icons/right_arrow.png" alt="Right Arrow" onclick="show_hide_side()">
+                <div>
+                    <h2> Announcements </h2>
                     <ul>
                         <li>There will be a night shift today. Prepare your tents.</li>
                         <li>The tasks have been updated, recently.</li>
@@ -77,9 +103,9 @@
                  Be careful with adding divs.
             -->
         </main>
-        <footer>
+        <footer onclick="handle_tap(this)">
             <hr/>
-            <div style="margin:20px 20px;">
+            <div>
                 <h4>Contact Us:</h4>
                 <p id="Contacts">
                     <i>20, Cairo Uneversity ST, Giza</i><br/>
@@ -92,12 +118,15 @@
                         </ul>
                 </p>
                 <ul>
-                    <li><a href="Credits.html">Credits</a></li>
-                    <li><a href="License.html">License</a></li>
+                    <li><a href="Credits.pdf">Credits</a></li>
+                    <li><a href="LICENSE">License</a></li>
                     <li><a href="#NavBar">Back to the Top of the Page.</a></li>
                     
                 </ul>
             </div>
         </footer>
+        <div id="document-handler" class="not-used">
+
+        </div>
     </body>
 </html>

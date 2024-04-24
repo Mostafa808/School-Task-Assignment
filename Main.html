@@ -22,44 +22,44 @@
             <ul>
                 <li>
                     <div>
-                        <img src="Images/Users/User/Profile.png" alt = "Profile Image" id="open-profile" class="pressable" onclick="">
+                        <img src="Images/Users/User/Profile.png" alt = "Profile Image" id="open-profile" class="pressable" onclick="handle_tap(this)">
                     </div>
                 </li>
                 <li >
-                    <button type="button" title="Open Home" id="open-home" class="current-page" onclick="">
+                    <button type="button" title="Open Home" id="open-home" class="current-page" onclick="handle_tap(this)">
                         Home 
                     </button>
                 </li>
                 <li>
-                    <button type="button" title="Open Tasks" id="open-tasks">
+                    <button type="button" title="Open Tasks" id="open-tasks" onclick="handle_tap(this)">
                         Tasks
                     </button>
                 </li>
-                <li>
-                    <button type="button" title="Open Meetings" id="open-Meetings">
+                <li class="not-used">
+                    <button type="button" title="Open Meetings" id="open-Meetings" onclick="handle_tap(this)">
                         Meetings
                     </button>
                 </li>
-                <li>
-                    <button type="button" title="Open About" id="open-about">
+                <li class="not-used">
+                    <button type="button" title="Open About" id="open-about" onclick="handle_tap(this)">
                         About
                     </button>
                 </li>
                 <li class="basic-search">
                     <form>
                         <div>
-                            <input type="text" id= "SearchField" placeholder="Principal Profile">
+                            <input type="text" id= "SearchField" placeholder="School Broadcast Task">
                         
                         <div class="column-flex">
                             <div>
                                 <select id="SearchType" name="SearchType" title="Search Type">
-                                    <option value="Profile" selected>Profile</option>
-                                    <option value="Tasks">Tasks</option>
-                                    <option value="Meeting">Meeting</option>
+                                    <option value="Profile" class="not-used">Profile</option>
+                                    <option value="Tasks" selected>Tasks</option>
+                                    <option value="Meeting" class="not-used">Meeting</option>
                                 </select>
                             </div>
                             <div>
-                                <button type="button" title="Search" id= "Search">
+                                <button type="button" title="Search" id= "Search" onclick="handle_tap(this)">
                                     <label for="Search">
                                         <div>
                                             <img src="Images/Icons/Search.png" alt="Search Icon"/>
@@ -74,15 +74,18 @@
                 
             </ul>
         </nav>
+        <div id="profile-handler" class = 'float-box not-used'>
+            <div>hi</div>
+            <div>you</div>
+        </div>
         <hr/>
         <main>
-            <article>
+            <article onclick="handle_tap(this)">
                 <div>
                     <!-- Place Your Code Here! for only content pages like about and display task.-->
-                    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
                 </div>
             </article>
-            <aside>
+            <aside onclick="handle_tap(this)">
                 <img src="Images/Icons/right_arrow.png" alt="Right Arrow" onclick="show_hide_side()">
                 <div>
                     <h2> Announcements </h2>
@@ -100,7 +103,7 @@
                  Be careful with adding divs.
             -->
         </main>
-        <footer>
+        <footer onclick="handle_tap(this)">
             <hr/>
             <div>
                 <h4>Contact Us:</h4>
@@ -115,12 +118,15 @@
                         </ul>
                 </p>
                 <ul>
-                    <li><a href="Credits.html">Credits</a></li>
-                    <li><a href="License.html">License</a></li>
+                    <li><a href="Credits.pdf">Credits</a></li>
+                    <li><a href="LICENSE">License</a></li>
                     <li><a href="#NavBar">Back to the Top of the Page.</a></li>
                     
                 </ul>
             </div>
         </footer>
+        <div id="document-handler" class="not-used">
+
+        </div>
     </body>
 </html>
