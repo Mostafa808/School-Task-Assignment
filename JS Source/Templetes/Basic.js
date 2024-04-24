@@ -12,7 +12,7 @@ class user{
      * @param {string} password 
      * @param {boolean} is_admin 
      */
-    constructor(username, full_name, email, address, department, birth_date, profile_image, password, is_admin){
+    constructor(username = "", full_name = "", email = "", address = "", department = "", birth_date = "", profile_image = "", password = "", is_admin = false, website_view = ''){
         this.username = username;
         this.full_name = full_name;
         this.email = email;
@@ -22,6 +22,7 @@ class user{
         this.profile_image = profile_image;
         this.password = password;
         this.is_admin = is_admin;
+        this.website_view = website_view;
     }
 }
 class basic_memory{
@@ -75,6 +76,24 @@ class element_handler{
         return mylink
     }
     /**
+     * 
+     * @param {string} href 
+     * @param {string} id 
+     * @param {[string]} classes 
+     */
+    static stylesheet(href, id = null, classes=[]){
+        var mystyle = document.createElement('link');
+        mystyle.rel = "stylesheet";
+        mystyle.href = href;
+        if(id!=null){
+            mystyle.id = id;
+        }
+        for (let class_name of classes) {
+            mystyle.classList.add(class_name);
+        }
+        return mystyle;
+    }
+    /**
      * @param {HTMLElement} element
      */
     static remove_children(element){
@@ -97,12 +116,18 @@ class element_handler{
 }
 class users_handler{
     /** @param {user} newuser */
-    static set_user(newuser){
-        var exists = this.search(newuser.id);
+    static set_user(newuser, current=false){
+        var exists = this.search(newuser.username);
         if (exists!=null){
             users[exists] = newuser;
         }
-        users.push(newuser);
+        else{
+            users.push(newuser);
+        }
+        if(current){
+            current_user = newuser;
+            basic_memory.set_object("current_user",current_user);
+        }
         this.save_users();
     }
     static del_user(oldUser){
@@ -118,13 +143,51 @@ class users_handler{
     }
     static search(username){
         var index = 0;
-        for(let user of users){
-            if(user.username==username){
-                return index;
+        if(users != null){
+            for(let user of users){
+                if(user.username==username){
+                    return index;
+                }
+                index+=1;
             }
-            index+=1;
         }
         return null;
+    }
+}
+// form handler
+class form_handler{
+    /**
+     * @param {HTMLInputElement} field 
+     * @returns {boolean}
+     */
+    static is_required(field){
+        return field.required;
+    }
+    /**
+     * 
+     * @param {HTMLInputElement} field 
+     * @param {string} field_name 
+     * @returns {boolean}
+     */
+    static validate_field(field, field_name){
+        if(this.is_required(field) && !Boolean(field.value)){
+            window.alert("Please enter: " + field_name);
+            return false;
+        }
+        return true;
+    }
+    /**
+     * 
+     * @param {[HTMLInputElement]} fields 
+     * @param {[string]} fields_names 
+     */
+    static validate_fields(fields, fields_names){
+        for(let index=0; index < fields.length; index++){
+            if(!this.validate_field(fields[index], fields_names[index])){
+                return false;
+            }
+        }
+        return true;
     }
 }
 // global settings
@@ -135,6 +198,9 @@ var current_user = basic_memory.get_object("current_user");
 // global users
 /**@type {[]} */
 var users = basic_memory.get_object("users");
+if(users==null){
+    users = []
+}
 // test user
 // var current_user = new user("mos","mostafa","gmail.com",'Gize',"social",'22/1/2004','https://th.bing.com/th/id/R.3d88a927f8529dcba03364b09d98adbe?rik=JYmQaMVSULpYQg&riu=http%3a%2f%2fthewowstyle.com%2fwp-content%2fuploads%2f2015%2f01%2fnature-images.jpg&ehk=BNPsuSOUR7ATZ3EpRwxx1xFl7LUbO3tYlu1wFLCBrCE%3d&risl=&pid=ImgRaw&r=0','m512',true)
 // UI Functions
@@ -252,6 +318,40 @@ function reset(){
         profile_handler.classList.remove("used");
         profile_handler.classList.add("not-used");
     }
+}
+// update profile image
+function update_profile_image(){
+    if(Boolean(current_user)){
+        if (Boolean(current_user.profile_image)){
+            document.getElementById("open-profile").src = current_user.profile_image;
+        }
+    }
+}
+// update website view
+function update_website_view(){
+    
+    if(Boolean(current_user)){
+        var main_head = document.querySelector("head");
+        var current_user_view = document.getElementById("user-desired-view");
+        var css_location = "CSS Source/Templetes/";
+        if(Boolean(current_user_view)){
+            main_head.removeChild(current_user_view);
+        }
+        if(recursive){
+            css_location = "../../" + css_location
+        }
+        if (Boolean(current_user.website_view)){
+            main_head.appendChild(
+                element_handler.stylesheet(css_location+current_user.website_view+".css","user-desired-view")
+            )
+        }
+    }
+}
+function pre_body_load(){
+    update_website_view();
+}
+function post_load(){
+    update_profile_image();
 }
 // update section
 window.onscroll = scroll_manager;

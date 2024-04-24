@@ -12,6 +12,7 @@
         <script src="../../JS Source/Templetes/Basic.js"></script>
         <script src="../../JS Source\Templetes\Recursive.js"></script>
         <script src="../../JS Source/Profile_Settings.js"></script>
+        <script>pre_body_load();</script>
     </head>
     <body>
         <header>
@@ -34,7 +35,7 @@
                     </button>
                 </li>
                 <li>
-                    <button type="button" title="Open Tasks" id="open-tasks" class="current-page" onclick="handle_tap(this)">
+                    <button type="button" title="Open Tasks" id="open-tasks" class="" onclick="handle_tap(this)">
                         Tasks
                     </button>
                 </li>
@@ -85,6 +86,7 @@
         <main>
             <article onclick="handle_tap(this)">
                 <div>
+                    <h1>Sign-Up</h1>
                     <form class="profil-setiing">
                         <table cellpadding="2">
                             <tbody>
@@ -134,6 +136,12 @@
                                     <td colspan="2"><hr/></td>
                                 </tr>
                                 <tr>
+                                    <input type="button" id="have-account" value="Have Account?" onclick="profile_handle_buttons(this)">
+                                </tr>
+                                <tr>
+                                    <hr/>
+                                </tr>
+                                <tr>
                                     <input type="button" id="sign-up-button" value="Sign-Up" onclick="profile_handle_buttons(this)">
                                 </tr>
                             </tbody>
@@ -174,8 +182,8 @@
                         </ul>
                 </p>
                 <ul>
-                    <li><a href="../../Credits.pdf">Credits</a></li>
-                    <li><a href="../../LICENSE">License</a></li>
+                    <li><a href="../../Credits.pdf" target="_blank">Credits</a></li>
+                    <li><a href="../../LICENSE" target="_blank">License</a></li>
                     <li><a href="#NavBar">Back to the Top of the Page.</a></li>
                     
                 </ul>
@@ -185,5 +193,6 @@
 
         </div>
         <script>show_hide_side()</script>
+        <script>post_load()</script>
     </body>
 </html>

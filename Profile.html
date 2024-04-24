@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="CSS Source/Profile_Settings.css">
         <script src="JS Source/Templetes/Basic.js"></script>
         <script src="JS Source/Profile_Settings.js"></script>
+        <script>pre_body_load();</script>
     </head>
     <body>
         <header>
@@ -33,7 +34,7 @@
                     </button>
                 </li>
                 <li>
-                    <button type="button" title="Open Tasks" id="open-tasks" class="current-page" onclick="handle_tap(this)">
+                    <button type="button" title="Open Tasks" id="open-tasks" class="" onclick="handle_tap(this)">
                         Tasks
                     </button>
                 </li>
@@ -127,8 +128,19 @@
                                     <td colspan="2"><hr/></td>
                                 </tr>
                                 <tr>
-                                    <td><label for="profile_image">Profile Image:</label></td>
-                                    <td><input type="url" id="profile_image" name="profile_image" placeholder="Enter Image URL"></td>
+                                    <td><label for="profile-image">Profile Image:</label></td>
+                                    <td><input type="url" id="profile-image" name="Profile Image" placeholder="Enter Image URL"></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="website-view">Website View:</label></td>
+                                    <td>
+                                        <select id="website-view" name="Website View", title="Select your disired view for the website">
+                                            <option value="" selected>Default</option>
+                                            <option value="Dark">Dark Mode</option>
+                                            <option value="View1">View I</option>
+                                            <option value="View2">View II</option>
+                                        </select>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td colspan="2"><hr/></td>
@@ -188,7 +200,8 @@
         <div id="document-handler" class="not-used">
 
         </div>
-        <script>current_data()</script>
-        <script>show_hide_side()</script>
+        <script>current_data();</script>
+        <script>show_hide_side();</script>
+        <script>post_load();</script>
     </body>
 </html>

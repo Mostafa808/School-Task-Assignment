@@ -113,14 +113,14 @@ a:hover{
     background-color: #3498db; 
     color: #ecf0f1; 
 }
-button{
+button, input[type="button"]{
     background-color: ecf0f1;
 }
-button:hover{
+button:hover, input[type="button"]:hover{
     background-color: gold;
     transition: background-color 0.5s;
 }
-button:active{
+button:active, input[type="button"]:active{
     background-color: lightcoral;
     transition: background-color 0.5s;
 }

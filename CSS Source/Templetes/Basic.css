@@ -263,15 +263,15 @@ a:hover{
     background-color: hsla(49, 95%, 25%, 0.371);
     color: red;
 }
-button{
+button, input[type="button"]{
     background-color: white;
     font-size: medium;
 }
-button:hover{
+button:hover, input[type="button"]:hover{
     background-color: gold;
     transition: background-color 0.5s;
 }
-button:active{
+button:active, input[type="button"]:active{
     background-color: lightcoral;
     transition: background-color 0.5s;
 
