@@ -1,0 +1,117 @@
+article > div{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+article > div > *{
+    width: 100%;
+}
+#advanced-search-section{
+    display: block;
+    height: 30px;
+    margin: 3px 1px;
+    width: 80%;
+}
+#advanced-search-section > div{
+    display: flex;
+}
+#advanced-search-section *{
+    height: 100%;
+    max-height: 100%;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+}
+#advanced-search-section img{
+    display: block;
+    max-width: 100%;
+    border-radius: 10px;
+    object-fit: contain;
+}
+
+#advanced-search-section > div > *{
+    display: flex;
+    margin: 1vw;
+}
+
+#advanced-search-section > div > *{
+    flex: 2;
+}
+#advanced-search-section > div > :nth-child(1){
+    flex: 20;
+}
+#advanced-search-section > div > div > :nth-child(1){
+     /* for autocomplete*/
+    position: relative;
+    display: inline-block;
+}
+#advanced-search-section > div > div > :nth-child(1) *{
+    width: 100%; 
+    height: 100%;
+    box-sizing: border-box;
+}
+#advanced-search-section > div > :nth-child(4){
+    flex: 3;
+}
+
+#advanced-search-section > div > div > *{
+    flex: 1;
+}
+#sort-by-label{
+    display: grid;   
+}
+#sort-by-label > label{
+    height: auto;   
+}
+#advanced-search > label{
+    display: flex;
+}
+/* autocomplete section*/
+#autocomplete-handler{
+    position: absolute;
+}
+#autocomplete-handler > div{
+    background-color: aquamarine;
+}
+/*Results of the tasks sections*/
+.tasks-list > div{
+    width: 80%;
+    left: 10%;
+    position: relative;
+}
+.task-item{
+    background-color: aqua;
+    border-radius: 10px;
+    margin: 1.5em;
+    text-align: left;
+    padding: 1.5em;
+}
+.task-title{
+    text-align: center;
+    font-size: large;
+}
+.priority-none{
+    color: inherit;
+}
+.priority-low{
+    color: rgb(88, 143, 6);
+}
+.priority-medium{
+    color: rgb(6, 25, 151);
+}
+.priority-high{
+    color: rgb(213, 12, 12);
+}
+.task-actions{
+    display: flex;
+}
+.task-actions > *{
+    margin: 2px;
+    flex: 1;
+}
+h2, h3{
+    font-family: 'Times New Roman', Times, serif;
+    background-color: aquamarine;
+    border-radius: 10px;
+}

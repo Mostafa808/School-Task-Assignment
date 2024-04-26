@@ -8,8 +8,10 @@
         </title>
         <link rel="icon" type="image/x-icon" href="../../Images/Icons/School.png">
         <link rel="stylesheet" href="../../CSS Source/Templetes/Basic.css">
+        <link rel="stylesheet" href="../../CSS Source/Tasks/Basic.css">
         <script src="../../JS Source/Templetes/Basic.js"></script>
-        <script src="../../JS Source\Templetes\Recursive.js"></script>
+        <script src="../../JS Source/Templetes/Recursive.js"></script>
+        <script src="../../JS Source/Tasks/View_Tasks.js"></script>
         <script>pre_body_load();</script>
     </head>
     <body>
@@ -84,42 +86,77 @@
         <main>
             <article onclick="handle_tap(this)">
                 <div>
-                    <h2>
-                        View List of Tasks - Admin
-                    </h2>
-                    To Create or Edit a Task, press these buttons to open the task creation form.<br/><br/>
-                    <a href="CreateNewTask.html"> <button type="button" id="CreateNewTask" title="You will create new task">Create New Task</button></a>
-                    <!-- View List of Tasks (for Admin) -->
-                    <div id="taskList" style="display:flex; flex-direction:column; flex:1;">
-                        <h2>Tasks</h2>
-                        <ul id="taskItems">
-                            <li>
-                                <strong>Task 1</strong> - Teacher A - Priority: high
-                                <a href="CreateNewTask.html">
-                                    <button onclick="editTask(1)">Edit</button>
-                                </a>
-                                <button onclick="deleteTask(1)">Delete</button>
-                            </li>
-                            <li>
-                                <strong>Task 2</strong> - Teacher B - Priority: medium
-                                <a href="CreateNewTask.html">
-                                    <button onclick="editTask(2)">Edit</button>
-                                </a>
-                                <button onclick="deleteTask(2)">Delete</button>
-                            </li>
-                            <li>
-                                <strong>Task 3</strong> - Teacher C - Priority: low
-                                <a href="CreateNewTask.html">
-                                    <button onclick="editTask(3)">Edit</button>
-                                </a>
-                                <button onclick="deleteTask(3)">Delete</button>
-                            </li>
-                        </ul>
-                        <span>
-                            <a href="CompletedTasks.html">
-                                View Completed Tasks
-                            </a>
-                        </span>
+                    <!-- Place Your Code Here! for only content pages like about and display task.-->
+                    <h1>Advanced Search</h1>
+                    <div id="advanced-search-section">
+                        <div>
+                            <div>
+                                <div>
+                                    <div>
+                                        <input type="text" id= "advanced-search-field" placeholder="School Broadcast Task">
+                                    </div>
+                                    <div id="autocomplete-handler" class = 'not-used'>
+                                        <div>test</div>
+                                        <div>test</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <button type="button" title="Search" id= "advanced-search" onclick="handle_tap(this)">
+                                    <label for="advanced-search">
+                                        <div>
+                                            <img src="../../Images/Icons/Search.png" alt="Search Icon"/>
+                                        </div>
+                                        Search
+                                    </label>
+                                </button>
+                            </div>
+                            <label for="sort-by">Sort By: </label>
+                            <div>
+                                <select id="sort-by" name="Sort By">
+                                    <option value="priority" selected>
+                                        Priority
+                                    </option>
+                                    <option value="id">
+                                            ID
+                                    </option>
+                                    <option value="deadline">
+                                            Deadline
+                                    </option>
+                                </select>
+                            </div>
+                            <label for="reversed-sort">Reversed Results: </label>
+                            <div>
+                                <input type="checkbox" id="reversed-sort" name="Reversed Sort">
+                            </div>
+                            <label for="completed">Completed: </label>
+                            <div>
+                                <input type="checkbox" id="completed" name="Completed">
+                            </div>
+                            <label for="in-progress">In Progress: </label>
+                            <div>
+                                <input type="checkbox" id="in-progress" name="In Progress" checked>
+                            </div>
+                        </div>
+                    </div>
+                    <hr/>
+                    <div>
+                        <input type="button" id="check-completed-tasks" title="Check your Completed tasks" value="Check Completed Tasks" class="not-used">
+                        <input type="button" id="create-new-task" title="You will create new task" value="Create New Task" onclick="handle_tap(this);">
+                    </div>
+                    <!-- View List of Tasks -->
+                    <h2>Results</h2>
+                    <h3>Assigned To Me</h3>
+                    <div id="tasks-assigned-to-me-list" class="tasks-list">
+                        <div>
+                        
+                        </div>
+                    </div>
+                    <h3>Assigned By Me</h3>
+                    <div id="tasks-assigned-to-by-list" class="tasks-list">
+                        <div>
+                            
+                        </div>
                     </div>
                 </div>
             </article>
@@ -168,6 +205,7 @@
         </div>
         <script>show_hide_side()</script>
         <script>post_load();</script>
+        <script>task_UI.init_page()</script>
 
     </body>
 </html>

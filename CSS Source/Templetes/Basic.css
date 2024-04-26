@@ -114,7 +114,8 @@ article{
     padding: 10px 10px 10px 10px;
     background-color: cornsilk;
     width: 77%;
-    height: 88vh;
+    min-height: 88vh;
+    height: fit-content;
     max-width: 77%;
 
     transition: max-width 0.5s ease-in;

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Task Viewer</title>
+<style>
+  .task-card {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+    margin: 10px;
+    background-color: #f9f9f9;
+  }
+  .task-header {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+  .task-body {
+    margin-bottom: 10px;
+  }
+  .task-footer {
+    text-align: right;
+  }
+  .priority-high {
+    color: red;
+  }
+  .priority-medium {
+    color: orange;
+  }
+  .priority-low {
+    color: green;
+  }
+  .completed {
+    text-decoration: line-through;
+  }
+</style>
+</head>
+<body>
+
+<div class="task-card" id="task1">
+  <div class="task-header">
+    <h2>Title: <span id="task-title">Task Title</span></h2>
+    <p>From User: <span id="from-user-index">0</span></p>
+    <p>To Users: <span id="to-users-indexes">[1, 2]</span></p>
+  </div>
+  <div class="task-body">
+    <p>Priority: <span id="task-priority" class="priority-medium">Medium</span></p>
+    <p>Deadline: <span id="task-deadline">2024-04-30</span></p>
+    <p>Description: <span id="task-description">This is a sample task description.</span></p>
+  </div>
+  <div class="task-footer">
+    <p>Status: <span id="task-completed" class="completed">Completed</span></p>
+  </div>
+</div>
+
+<script>
+  // Example JavaScript code to populate the task card with an object instance
+  const task1 = new task(
+    1, 
+    "Implement UI Block", 
+    0, 
+    [1, 2], 
+    "High", 
+    "2024-04-30", 
+    "Create a UI block to display task details.", 
+    true
+  );
+
+  document.getElementById('task-title').textContent = task1.title;
+  document.getElementById('from-user-index').textContent = task1.from_user_index;
+  document.getElementById('to-users-indexes').textContent = JSON.stringify(task1.to_users_indexes);
+  document.getElementById('task-priority').textContent = task1.priority;
+  document.getElementById('task-priority').className = `priority-${task1.priority.toLowerCase()}`;
+  document.getElementById('task-deadline').textContent = task1.deadline;
+  document.getElementById('task-description').textContent = task1.description;
+  document.getElementById('task-completed').textContent = task1.completed ? 'Completed' : 'Pending';
+  if(task1.completed) {
+    document.getElementById('task1').classList.add('completed');
+  }
+</script>
+
+</body>
+</html>

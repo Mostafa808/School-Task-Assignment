@@ -10,7 +10,7 @@ function profile_handle_buttons(current_element){
         var website_view = element_handler.get_id("website-view");
         if(Boolean(full_name.value)) current_user.full_name = full_name.value;
         if(Boolean(email.value)) current_user.email = email.value;
-        if(Boolean(birth_date.value)) current_user.birth_date = birth_date.value;
+        current_user.birth_date = new Date(birth_date.value).toISOString();
         if(Boolean(address.value)) current_user.address = address.value;
         if(Boolean(department.value)) current_user.department = department.value;
         current_user.is_admin = is_admin.checked;
@@ -90,7 +90,7 @@ function profile_handle_buttons(current_element){
         if(Boolean(password.value)) current_user.password = password.value;
         if(Boolean(full_name.value)) current_user.full_name = full_name.value;
         if(Boolean(email.value)) current_user.email = email.value;
-        if(Boolean(birth_date.value)) current_user.birth_date = birth_date.value;
+        current_user.birth_date = new Date(birth_date.value).toISOString();
         if(Boolean(address.value)) current_user.address = address.value;
         if(Boolean(department.value)) current_user.department = department.value;
         current_user.is_admin = is_admin.checked;
@@ -116,7 +116,7 @@ function current_data(){
 
     if(Boolean(current_user.full_name)) full_name.placeholder = current_user.full_name;
     if(Boolean(current_user.email)) email.placeholder = current_user.email;
-    if(Boolean(current_user.birth_date)) birth_date.value = current_user.birth_date;
+    birth_date.valueAsDate = new Date(current_user.birth_date);
     if(Boolean(current_user.address)) address.placeholder = current_user.address;
     if(Boolean(current_user.department)) department.value = current_user.department;
     is_admin.checked = current_user.is_admin;

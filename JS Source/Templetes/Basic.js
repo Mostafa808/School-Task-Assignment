@@ -11,8 +11,9 @@ class user{
      * @param {string} profile_image 
      * @param {string} password 
      * @param {boolean} is_admin 
+     * @param {[]} tasks_index
      */
-    constructor(username = "", full_name = "", email = "", address = "", department = "", birth_date = "", profile_image = "", password = "", is_admin = false, website_view = ''){
+    constructor(username = "", full_name = "", email = "", address = "", department = "", birth_date = "", profile_image = "", password = "", is_admin = false, website_view = "", tasks_index = []){
         this.username = username;
         this.full_name = full_name;
         this.email = email;
@@ -23,6 +24,7 @@ class user{
         this.password = password;
         this.is_admin = is_admin;
         this.website_view = website_view;
+        this.tasks_index = tasks_index;
     }
 }
 class basic_memory{
@@ -54,7 +56,9 @@ class element_handler{
     static basic(content, type, id=null, classes=[]){
         /**@type {HTMLElement} */
         var elem = document.createElement(type);
-        elem.textContent = content;
+        if(content!=null){
+            elem.textContent = content;
+        }
         if(id!=null){
             if(!this.check_id(id)){
                 elem.id = id;
@@ -130,10 +134,14 @@ class users_handler{
         }
         this.save_users();
     }
+    /**
+     * 
+     * @param {user} oldUser 
+     */
     static del_user(oldUser){
-        var exists = this.search(oldUser.id);
+        var exists = this.search(oldUser.username);
         if (exists!=null){
-            users.splice(exists,1);
+            users.splice(exists, 1);
             this.save_users();
         }
 
@@ -144,14 +152,55 @@ class users_handler{
     static search(username){
         var index = 0;
         if(users != null){
-            for(let user of users){
-                if(user.username==username){
+            for(let this_user of users){
+                if(this_user.username==username){
                     return index;
                 }
                 index+=1;
             }
         }
         return null;
+    }
+    /**
+     * 
+     * @param {task} newtask 
+     */
+    static add_task(newtask, new_task_index){
+        for (let user_index of newtask.to_users_indexes){
+            if(!this.has_task(users[user_index], new_task_index)){
+                users[user_index].tasks_index.push(new_task_index);
+            }
+        }
+        if(!this.has_task(users[newtask.from_user_index], new_task_index)){
+            users[newtask.from_user_index].tasks_index.push(new_task_index);
+        }
+        current_user = users[users_handler.search(current_user.username)];
+        basic_memory.set_object("current_user", current_user);
+        this.save_users();
+    }
+    static del_task(task_index){
+        let user_index = 0;
+        for(let user of users){
+            let new_tasks = [];
+            for(let task of user.tasks_index){
+                if (task != task_index){
+                    new_tasks.push(task)
+                }
+            }
+            users[user_index].tasks_index = new_tasks;
+            user_index += 1;
+        }
+        current_user = users[users_handler.search(current_user.username)];
+        basic_memory.set_object("current_user", current_user);
+        users_handler.save_users();
+    }
+    static has_task(thisuser, task_index){
+        for(let old_index of thisuser.tasks_index){
+            if(old_index==task_index){
+                return true;
+            }
+        }
+        return false
     }
 }
 // form handler
@@ -190,19 +239,186 @@ class form_handler{
         return true;
     }
 }
+// tasks and its handler
+class task{
+    /**
+     * 
+     * @param {string} id 
+     * @param {string} title 
+     * @param {number} from_user_index 
+     * @param {[number]} to_users_indexes 
+     * @param {int} priority 
+     * @param {string} deadline 
+     * @param {string} description 
+     * @param {boolean} completed
+     */
+    constructor(id, title, from_user_index, to_users_indexes, priority, deadline, description = "", completed = false){
+        this.id = id;
+        this.title = title;
+        this.from_user_index = from_user_index;
+        this.to_users_indexes = to_users_indexes;
+        this.priority = priority;
+        this.deadline = deadline;
+        this.description = description;
+        this.completed = completed;
+    }
+}
+class tasks_handler{
+    /** @param {task} newtask */
+    static set_task(newtask){
+        var exists = this.search(newtask.id);
+        if (exists!=null){
+            tasks[exists] = newtask;
+        }
+        else{
+            tasks.push(newtask);
+        }
+        users_handler.add_task(newtask, tasks.length-1);
+        this.save_tasks();
+    }
+    /**
+     * 
+     * @param {task} oldTask 
+     */
+    static del_task(oldTask){
+        var exists = this.search(oldTask.id);
+        if (exists!=null){
+            users_handler.del_task(exists);
+            tasks.splice(exists,1);
+            this.save_tasks();
+        }
+
+    }
+    static save_tasks(){
+        basic_memory.set_object("tasks", tasks)
+    }
+    static search(id){
+        var index = 0;
+        if(tasks != null){
+            for(let this_task of tasks){
+                if(this_task.id==id){
+                    return index;
+                }
+                index+=1;
+            }
+        }
+        return null;
+    }
+    /**
+     * 
+     * @param {[task]} tasks_array 
+     * @param {string} sort_by 
+     */
+    static sort_tasks(tasks_array, sort_by){
+        let output_array = [];
+        if(sort_by=="id"){
+            output_array = tasks_array.sort(
+                function name(first, second) {
+                    let firstID=first.id.toLowerCase();
+                    let secondID=second.id.toLowerCase();
+                    if(firstID>secondID){
+                        return 1;
+                    }
+                    if(firstID<secondID){
+                        return -1;
+                    }
+                     return 0;
+                }
+            )
+        }
+        else if(sort_by=="priority"){
+            output_array = tasks_array.sort(
+                function name(first, second) {
+                    let first_priority=first.priority;
+                    let second_priority=second.priority;
+                    if(first_priority>second_priority){
+                        return 1;
+                    }
+                    if(first_priority<second_priority){
+                        return -1;
+                    }
+                     return 0;
+                }
+            )
+        }
+        else if (sort_by=="deadline"){
+            output_array = tasks_array.sort(
+                function name(first, second) {
+                    let first_deadline=first.deadline.toLowerCase();
+                    let second_deadline=second.deadline.toLowerCase();
+                    if(first_deadline>second_deadline){
+                        return 1;
+                    }
+                    if(first_deadline<second_deadline){
+                        return -1;
+                    }
+                     return 0;
+                }
+            )
+        }
+        return output_array;
+    }
+    /**
+     * 
+     * @param {user} this_user 
+     */
+    static get_user_tasks(this_user){
+        let output_tasks = []
+        for (let task_index of this_user.tasks_index){
+            output_tasks.push(tasks[task_index])
+        }
+        return output_tasks;
+    }
+    /**
+     * @param {task} this_task 
+     * @returns {[user]}
+     */
+    static get_task_users(this_task, all_flag){
+        let output_users = []
+        for (let user_index of this_task.to_users_indexes){
+            output_users.push(users[user_index])
+        }
+        if(all_flag && !output_users.includes(users[this_task.from_user_index])){
+            output_users.push(users[this_task.from_user_index])
+        }
+        return output_users;
+    }
+}
+class search_data_model{
+    constructor(search_content = '', sort_by = 'priority', reversed = false, include_completed = false, include_incompleted = true){
+        this.search_content = search_content;
+        this.sort_by = sort_by;
+        this.reversed = reversed;
+        this.include_completed = include_completed;
+        this.include_incompleted = include_incompleted;
+    }
+}
+
+
 // global settings
 var recursive = false;
 //memory model
 /** @type {user} */
 var current_user = basic_memory.get_object("current_user");
 // global users
-/**@type {[]} */
+/**@type {[user]|null} */
 var users = basic_memory.get_object("users");
 if(users==null){
     users = []
 }
-// test user
-// var current_user = new user("mos","mostafa","gmail.com",'Gize',"social",'22/1/2004','https://th.bing.com/th/id/R.3d88a927f8529dcba03364b09d98adbe?rik=JYmQaMVSULpYQg&riu=http%3a%2f%2fthewowstyle.com%2fwp-content%2fuploads%2f2015%2f01%2fnature-images.jpg&ehk=BNPsuSOUR7ATZ3EpRwxx1xFl7LUbO3tYlu1wFLCBrCE%3d&risl=&pid=ImgRaw&r=0','m512',true)
+// global tasks
+/**@type {[task]|null} */
+var tasks = basic_memory.get_object("tasks");
+if(tasks==null){
+    tasks = [];
+}
+/** @type {task} */
+var current_selected_task = basic_memory.get_object("current_selected_task");
+// global current search
+/** @type {search_data_model} */
+search_data = basic_memory.get_object("search_data");
+// edit task flag
+var edit_task_flag = basic_memory.get_object("edit_task_flag");
 // UI Functions
 function scroll_manager(){
     var aside_node = document.querySelectorAll("aside")[0];
@@ -307,13 +523,89 @@ function handle_tap(current_element){
     else if(current_element.id =="sign-up"){
         element_handler.goto_link('Sections/Account/Sign-up.html');
     }
+    else if(current_element.id=="Search" || current_element.id == "advanced-search"){
+        task_UI.search_task(true);
+    }else if(current_element.classList.contains("mark-incompleted-button") || current_element.classList.contains("mark-completed-button")){
+        if(current_element.parentElement){
+            if(current_element.parentElement.parentElement){
+                let this_task = tasks[tasks_handler.search(
+                    current_element.parentElement.parentElement.classList.item(1)
+                )];
+                this_task.completed = !Boolean(this_task.completed);
+                tasks_handler.set_task(this_task);
+                element_handler.goto_link("Tasks.html")
+            }
+        }
+    }else if(current_element.classList.contains("edit-task")){
+        if(current_element.parentElement){
+            if(current_element.parentElement.parentElement){
+                let this_task = tasks[tasks_handler.search(
+                    current_element.parentElement.parentElement.classList.item(1)
+                )];
+                current_selected_task = this_task;
+                basic_memory.set_object("current_selected_task", current_selected_task);
+                edit_task_flag = true;
+                basic_memory.set_object("edit_task_flag", edit_task_flag);
+                element_handler.goto_link("Sections/Tasks/CreateNewTask.html")
+            }
+        }
+    }else if(current_element.classList.contains("delete-task")){
+        if(current_element.parentElement){
+            if(current_element.parentElement.parentElement){
+                let this_task = tasks[tasks_handler.search(
+                    current_element.parentElement.parentElement.classList.item(1)
+                )];
+                tasks_handler.del_task(this_task);
+                element_handler.goto_link("Tasks.html")
+            }
+        }
+    }else if(current_element.id=="save-new-task"){
+        let newtask = new task(
+            document.getElementById("task-id-field").value,
+            document.getElementById("TaskTitleInput").value,
+            users_handler.search(current_user.username),
+        )
+        /**@type {[string]} */
+        let current_to_users = document.getElementById("teachers").value.replace(" ","").split(',');
+        let current_priority = 0;
+        if(document.getElementById("low").checked){
+            current_priority=1;
+        }else if(document.getElementById("medium").checked){
+            current_priority=2;
+        }else if(document.getElementById("high").checked){
+            current_priority=3;
+        }
+        newtask.priority = current_priority;
+        newtask.deadline = new Date(document.getElementById("deadline").value).toISOString();
+        newtask.description = document.getElementById("description-field").value;
+        if(tasks_handler.search(newtask.id)!=null && !edit_task_flag){
+            window.alert("This Task ID is already exists");
+        }
+        let these_users_indexes = []
+        for(let this_user_username of current_to_users){
+            let current_result = users_handler.search(this_user_username);
+            if(current_result==null){
+                window.alert("cannot find this username: "+this_user_username);
+                return false;
+            }
+            these_users_indexes.push(current_result);
+        }
+        newtask.to_users_indexes = these_users_indexes;
+        tasks_handler.set_task(newtask);
+        element_handler.goto_link("Tasks.html");
+    }
+    else if(current_element.id=="create-new-task"){
+        edit_task_flag = false;
+        basic_memory.set_object("edit_task_flag", edit_task_flag);
+        element_handler.goto_link("Sections/Tasks/CreateNewTask.html");
+    }
     else{
         reset();
     }
 }
 // global reset
 function reset(){
-    var profile_handler = document.getElementById("profile-handler");
+    let profile_handler = document.getElementById("profile-handler");
     if(profile_handler.classList.contains("used")){
         profile_handler.classList.remove("used");
         profile_handler.classList.add("not-used");
@@ -347,11 +639,15 @@ function update_website_view(){
         }
     }
 }
+// update section
 function pre_body_load(){
     update_website_view();
 }
 function post_load(){
     update_profile_image();
+    window.onscroll = scroll_manager;
 }
-// update section
-window.onscroll = scroll_manager;
+// test section
+function alert_break(){
+    window.alert("it is working.");
+}
